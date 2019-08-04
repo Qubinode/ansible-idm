@@ -10,14 +10,14 @@
     name: "{{ idm_hostname }}.{{ domain }}"
   tags: [preinstall]
 
-- name: update packages
-  yum:
-    name: '*'
-    state: latest
-  register: yum_result
-  async: 1000
-  poll: 30
-  tags: [preinstall,update]
+#- name: update packages
+#  yum:
+#    name: '*'
+#    state: latest
+#  register: yum_result
+#  async: 1000
+#  poll: 30
+#  tags: [preinstall,update]
 
 - name: install IPA packages
   yum:
