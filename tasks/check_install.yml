@@ -1,7 +1,7 @@
 ---
 # tasks file for idm
 
-- name: check if satellite is answering
+- name: check if IDM is answering
   uri:
     url: "https://{{ idm_hostname }}.{{ domain }}/ipa/ui"
     user: "{{ idm_admin_user }}"
