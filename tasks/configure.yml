@@ -21,7 +21,7 @@
     label: "{{ item.username }}"
   register: idm_users_added 
   tags: configure
-when: configue_ipa_users
+  when: configue_ipa_users
 
 - name: set IDM user password
   ipa_user:
@@ -37,7 +37,7 @@ when: configue_ipa_users
     label: "{{ item.item.username }}"
   when: item is changed 
   tags: configure
-when: configue_ipa_users
+  when: configue_ipa_users
 
 - name: Add forward DNS entries to IDM
   ipa_dnsrecord:
