@@ -35,9 +35,8 @@
   loop: "{{ idm_users_added.results }}"
   loop_control:
     label: "{{ item.item.username }}"
-  when: item is changed 
+  when: item is changed and configure_ipa_users
   tags: configure
-  when: configue_ipa_users
 
 - name: Add forward DNS entries to IDM
   ipa_dnsrecord:
