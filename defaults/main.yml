@@ -43,6 +43,7 @@ idm_zones:
 
 # IDM Post configuration
 default_pass_expire: 20180121182022
+configue_ipa_users: false
 idm_users:
    - username: ""
      password: ""

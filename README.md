@@ -48,6 +48,9 @@ Role Variables
 | `idm_zone_overlap` | :x:      | ```see defaults/main.yml``` | Create zone if it already exists (--allow-zone-overlap) |
 | `idm_zones` | :x:      | ```{{ idm_reverse_zones }},{{ idm_forward_zones }}``` | Sets up array of all zones |
 
+### Recent Updates
+
+- added configue_ipa_users, default vaule is false. It should be set to true if you are adding users.
 
 Dependencies
 ------------
