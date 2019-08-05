@@ -50,7 +50,8 @@ Role Variables
 
 ### Recent Updates
 
-- added configue_ipa_users, default vaule is false. It should be set to true if you are adding users.
+- added configue_ipa_users, default value is false. It should be set to true if you are adding users.
+- added add_reverse_dns, default value is false. It should be set to true if you are adding users.
 
 Dependencies
 ------------

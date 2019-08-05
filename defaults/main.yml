@@ -55,6 +55,7 @@ idm_users:
      title: ""
      state: ""
 
+add_dns_records: false
 idm_dns_records:
    - hostname: ""
      record_type: ""

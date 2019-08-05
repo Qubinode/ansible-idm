@@ -52,6 +52,7 @@
   with_items:
     - "{{ idm_dns_records }}"
   tags: configure
+  when: add_dns_records
 
 - name: Add reverse DNS entries to IDM
   ipa_dnsrecord:
@@ -67,3 +68,4 @@
   with_items:
     - "{{ idm_dns_records }}"
   tags: configure
+  when: add_dns_records
