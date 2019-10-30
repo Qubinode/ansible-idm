@@ -6,7 +6,7 @@ idm_packages:
 domain: hattrick.lab
 dns_server_public: 1.1.1.1
 idm_hostname: "" #Short hostname only
-idm_public_ip: "" #ip address of the server or blank for ansible to detect and use eth0
+idm_server_ip: "" #ip address of the server or blank for ansible to detect and use eth0
 idm_dm_pwd: ""
 idm_admin_pwd: ""
 idm_admin_user: admin
