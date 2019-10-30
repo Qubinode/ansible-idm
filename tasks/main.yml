@@ -10,10 +10,17 @@
   when: not idm_is_installed
   tags: [preinstall]
 
+- set_fact:
+    host_ip: "{{ idm_server_ip if idm_server_ip is defined and idm_server_ip | length != 0 else hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}"
+
 - include: install.yml
+  vars:
+    - idm_server_ip: "{{ host_ip }}"
   when: not idm_is_installed
   tags: [install]
 
 - include: configure.yml
   when: idm_is_installed
   tags: [configure]
+
+vm_ipaddress | length != 0

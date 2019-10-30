@@ -22,8 +22,8 @@
   lineinfile:
     dest: /etc/hosts
     state: present
-    regexp: "^{{ idm_public_ip }}"
-    line: "{{ idm_public_ip }} {{ idm_hostname }}.{{ domain }} {{ idm_hostname }}"
+    regexp: "^{{ idm_server_ip }}"
+    line: "{{ idm_server_ip }} {{ idm_hostname }}.{{ domain }} {{ idm_hostname }}"
   tags: [ install ]
 
 - name: create template script for ipa-install
@@ -46,7 +46,7 @@
 
 - name: waiting for IDM services to come up
   wait_for:
-    host: "{{ idm_public_ip }}"
+    host: "{{ idm_server_ip }}"
     port: 443
     state: started
     delay: 10

@@ -6,7 +6,7 @@ ipa-server-install \
 -a $ADMIN_PASSWORD \
 -p $DIR_PASSWORD \
 --hostname={{ hostname | default(ansible_fqdn)}} \
---ip-address={{ idm_public_ip |default(ansible_eth0.ipv4.address) }} \
+--ip-address={{ idm_server_ip }} \
 {{ '--idstart=%s' % idm_idstart if idm_idstart | default(False) else '' }} \
 {{ '--idmax=%s' % idm_idmax if idm_idmax | default(False) else ' ' }} \
 {{ '--forwarder=%s' % idm_forward_ip
