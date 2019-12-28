@@ -3,21 +3,21 @@
   tags: install
   vars:
     domain: "example.com"
-    dns_server_public: 1.1.1.1
+    dns_forwarder: 1.1.1.1
     idm_hostname: idm #Short hostname
     idm_ssh_user: root
     idm_ssh_pwd: redhat
-    idm_public_ip: "192.168.0.4"
+    idm_server_ip: "192.168.0.4"
     idm_base_img: rhel-guest-image-7.qcow2 #Name of base image in /var/lib/libvirt/images on KVM hypervisor
     idm_os_disk_name: "{{ idm_hostname }}"
     idm_nics:
       - name: eth0
         bootproto: static
         onboot: yes
-        ip: "{{ idm_public_ip }}"
+        ip: "{{ idm_server_ip }}"
         prefix: "24"
         gateway: "192.168.0.1"
-        dns_server: "{{ dns_server_public }}"
+        dns_server: "{{ dns_forwarder }}"
         config: "--type bridge --source br1 --model virtio"
     idm_repos:
       - rhel-7-server-rpms
@@ -29,7 +29,7 @@
     idm_realm: "{{ domain | upper }}"
     idm_dm_pwd: "Redhat1993"
     idm_admin_pwd: "Redhat1993"
-    idm_forward_ip: "{{ dns_server_public }}"
+    idm_forward_ip: "{{ dns_forwarder }}"
     idm_reverse_zone: "168.192.in-addr.arpa."
     idm_users:
        - username: operator
